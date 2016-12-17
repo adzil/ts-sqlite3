@@ -1,0 +1,62 @@
+{
+  "name": "ts-sqlite3",
+  "version": "0.1.0",
+  "description": "SQLite3 TypeScript module to support async/await asynchronous model",
+  "main": "cjs/index.js",
+  "typings": "cjs/index.d.ts",
+  "scripts": {
+    "prepublish": "tsc",
+    "test": "nyc mocha -r ts-node/register test/**/*.spec.ts",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "app": "ts-node src/index.ts",
+    "dev": "nodemon --watch \"src/**/*.ts\" --exec \"ts-node\" src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adzil/tsplus.git"
+  },
+  "keywords": [
+    "typescript",
+    "boilerplate",
+    "test",
+    "continuous-integration",
+    "coverage"
+  ],
+  "author": "Fadhli Dzil Ikram",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adzil/tsplus/issues"
+  },
+  "homepage": "https://github.com/adzil/tsplus#readme",
+  "devDependencies": {
+    "@types/chai": "^3.4.34",
+    "@types/chai-as-promised": "0.0.29",
+    "@types/mocha": "^2.2.33",
+    "@types/node": "^6.0.51",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "coveralls": "^2.11.15",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
+    "nyc": "^10.0.0",
+    "ts-node": "^1.7.0",
+    "typescript": "^2.0.10"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ]
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.43",
+    "@types/sqlite3": "^2.2.31",
+    "lodash": "^4.17.2",
+    "sqlite3": "^3.1.8"
+  }
+}
